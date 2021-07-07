@@ -33,11 +33,20 @@ npx hardhat node
 
 ```sh
 npx hardhat run scripts/deploy.js --network localhost
+
+npx hardhat run scripts/deploy.ts --network rinkeby
 ```
 
-5. Update **src/App.tsx** with the values of your contract addresses (`greeterAddress` and `tokenAddress`)
+5. Verify on Etherscan
+   Using the [hardhat-etherscan plugin](https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html), add Etherscan API key to `hardhat.config.ts`, then run:
 
-6. Run the app
+```sh
+npx hardhat verify --network rinkeby <DEPLOYED ADDRESS>
+```
+
+6. Update **src/App.tsx** with the values of your contract addresses (`greeterAddress` and `tokenAddress`)
+
+7. Run the app
 
 ```sh
 yarn start
